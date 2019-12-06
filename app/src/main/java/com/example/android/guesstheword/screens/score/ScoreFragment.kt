@@ -55,6 +55,7 @@ class ScoreFragment : Fragment() {
                 .get(ScoreViewModel::class.java)
         viewModel.score.observe(this, Observer { newScore->binding.scoreText.text=newScore.toString() })
 
+        //
         viewModel.eventPlayAgain.observe(this, Observer { playAgain ->
             if (playAgain) {
                 findNavController().navigate(ScoreFragmentDirections.actionRestart())
